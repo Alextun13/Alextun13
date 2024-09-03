@@ -5,7 +5,8 @@ Esta aplicacion fue creada por:
   - Catalina Contreras
   - Pedro Salazar
 
-Instalación.
+Instalación
+
   Prerrequisitos
   Asegúrate de tener instalados los siguientes programas en tu máquina:
 
