@@ -1,4 +1,4 @@
-- - - - T H A N O S - - - -
+- - - T H A N O S - - - 
 
 Esta aplicacion fue creada por:
   - Alexander Lucero
