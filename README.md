@@ -6,10 +6,10 @@ Esta aplicacion fue creada por:
   - Pedro Salazar
 
 Instalación
-Prerrequisitos
-Asegúrate de tener instalados los siguientes programas en tu máquina:
+  Prerrequisitos
+  Asegúrate de tener instalados los siguientes programas en tu máquina:
 
-Node.js (versión recomendada: v14 o superior)
-Ionic CLI (puedes instalarlo con npm install -g @ionic/cli)
-Angular CLI (puedes instalarlo con npm install -g @angular/cli)
+  - Node.js (versión recomendada: v14 o superior)
+  - Ionic CLI (puedes instalarlo con npm install -g @ionic/cli)
+  - Angular CLI (puedes instalarlo con npm install -g @angular/cli)
 
