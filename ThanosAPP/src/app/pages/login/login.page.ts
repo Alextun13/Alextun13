@@ -11,7 +11,7 @@ import { Login } from 'src/app/models/login';
 })
 export class LoginPage implements OnInit {
 
-  username!: String;
+  username!: string;
   password!: String;
   mensaje : string;
 
