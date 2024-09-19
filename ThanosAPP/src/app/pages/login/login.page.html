@@ -4,24 +4,29 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
-  <h1>Bienvenido</h1>
+<ion-content class="ion-padding">
 
-  <h2>Inicia session</h2>
+  <h1>Bienvenido Fideo weko</h1>
 
-  <ion-item class="ion-padding">
-    <ion-input [(ngModel)]= "username" labelPlacement="floating">
-      <div slot="label">Usuario</div>
-    </ion-input>
-  </ion-item>
+  <h2>Inicia sesión</h2>
 
   <ion-item class="ion-padding">
-    <ion-input [(ngModel)]= "password" type = "password" labelPlacement="floating">
-      <div slot="label">Contraseña </div>
-    </ion-input>
+    <ion-img src="assets/images/login.svg"></ion-img>
   </ion-item>
 
-  <ion-button (click)="validarCredenciales()" class="ion-padding" expand="block">Ingresar</ion-button>
+  <ion-item class="ion-margin-top">
+    <ion-label position="floating">Usuario</ion-label>
+    <ion-input [(ngModel)]="username"></ion-input>
+  </ion-item>
 
-  <a routerLink="/registro">Registrate Aqui</a>
+  <ion-item class="ion-margin-top">
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input [(ngModel)]="password" type="password"></ion-input>
+  </ion-item>
+
+  <ion-button class="ion-margin-top" expand="block" (click)="validarCredenciales()">
+    Ingresar
+  </ion-button>
+
+  <a routerLink="/registro">Regístrate Aquí</a>
 </ion-content>
