@@ -2,7 +2,7 @@ import { Component,ElementRef, OnInit,ViewChild } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { DbService } from 'src/app/services/db.service';
-import { Login } from 'src/app/models/login';
+import {Login } from 'src/app/models/login';
 
 @Component({
   selector: 'app-login',
@@ -11,9 +11,10 @@ import { Login } from 'src/app/models/login';
 })
 export class LoginPage implements OnInit {
 
-  username!: String;
-  password!: String;
+  username!: string;
+  password!: string;
   mensaje : string;
+
 
   constructor(
     private toastController : ToastController,
@@ -53,7 +54,7 @@ export class LoginPage implements OnInit {
     const toast = await this.toastController.create({
       message: message,
       duration: 3000,
-      position: 'bottom',
+      position: 'middle',
       color: color
     });
     await toast.present();
