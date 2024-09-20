@@ -6,7 +6,7 @@
 
 <ion-content class="ion-padding">
 
-  <h1>Bienvenido Fideo weko</h1>
+  <h1>Bienvenido</h1>
 
   <h2>Inicia sesión</h2>
 
@@ -16,12 +16,12 @@
 
   <ion-item class="ion-margin-top">
     <ion-label position="floating">Usuario</ion-label>
-    <ion-input [(ngModel)]="username"></ion-input>
+    <ion-input [(ngModel)]="username" placeholder="Usuario"></ion-input>
   </ion-item>
 
   <ion-item class="ion-margin-top">
     <ion-label position="floating">Contraseña</ion-label>
-    <ion-input [(ngModel)]="password" type="password"></ion-input>
+    <ion-input [(ngModel)]="password" type="password"  placeholder="Contraseña"></ion-input>
   </ion-item>
 
   <ion-button class="ion-margin-top" expand="block" (click)="validarCredenciales()">
