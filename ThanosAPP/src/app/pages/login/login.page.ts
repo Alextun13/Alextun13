@@ -14,6 +14,7 @@ export class LoginPage implements OnInit {
   username!: string;
   password!: string;
   mensaje : string;
+  btnContraseña : string;
 
 
   constructor(
@@ -22,6 +23,8 @@ export class LoginPage implements OnInit {
     private dbService: DbService,
   ) { 
     this.mensaje = "Bienvenido"
+
+    this.btnContraseña = "Opcion no disponible"
   }
 
   ngOnInit() {
@@ -59,5 +62,16 @@ export class LoginPage implements OnInit {
     });
     await toast.present();
   }
+
+  async noDisponible(){
+    const toast = await this.toastController.create({
+      message: "Opcion no implementada por el momento",
+      duration: 3000,
+      position: 'middle',
+      color: 'warning'
+    });
+    await toast.present();
+  }
+
 }
 
