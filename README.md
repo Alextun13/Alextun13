@@ -14,3 +14,17 @@ Instalación
   - Ionic CLI (puedes instalarlo con npm install -g @ionic/cli)
   - Angular CLI (puedes instalarlo con npm install -g @angular/cli)
 
+Usuarios disponibles
+
+  Usuario: admin
+  Contraseña: 1234
+  
+  Usuario: Alex
+  Contraseña: 1234
+  
+  Usuario: Pedro
+  Contraseña: 1234
+  
+  Usuario: Cata
+  Contraseña: 1234
+    
