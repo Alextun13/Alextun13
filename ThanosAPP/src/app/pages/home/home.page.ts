@@ -28,8 +28,8 @@ export class HomePage implements OnInit {
       this.username = state['user']
     }
     
-    this.edLevels.set('0', 'Ingenieria en informatica');
-    this.edLevels.set('1', 'Mecanica');
+    this.edLevels.set('0', 'Ingeniería en informática');
+    this.edLevels.set('1', 'Mecánica');
     this.edLevels.set('2', 'Analista programador');
     this.edLevels.set('3', 'Audiovisual');
     this.edLevels.set('4', 'Telecomunicaciones');
