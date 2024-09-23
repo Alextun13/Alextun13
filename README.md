@@ -17,14 +17,18 @@ Instalación
 Usuarios disponibles
 
   Usuario: admin
+  
   Contraseña: 1234
   
   Usuario: Alex
+  
   Contraseña: 1234
   
   Usuario: Pedro
+  
   Contraseña: 1234
   
   Usuario: Cata
+  
   Contraseña: 1234
     
