@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
+import { DbService } from 'src/app/services/db.service';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +21,8 @@ export class HomePage implements OnInit {
 
   constructor(
     private toastController : ToastController,
-    private router: Router
+    private router: Router,
+    private dbService : DbService, 
   ) {
     const state = this.router.getCurrentNavigation()?.extras.state;
     if(state){
@@ -53,6 +55,11 @@ export class HomePage implements OnInit {
       color: 'warning'
     });
     await toast.present();
+  }
+
+  logout(){
+    this.dbService.logout();
+    this.router.navigate(['/login']);
   }
   
 }
