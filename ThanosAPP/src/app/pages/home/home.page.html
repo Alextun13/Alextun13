@@ -9,51 +9,27 @@
 </ion-header>
 
 <ion-content color="light">
-  <h1>Bienvenido: {{username}}</h1>
-  <ion-list [inset]="true">
-    <ion-item>
-      <ion-input  [(ngModel)]="name" label="Nombre:"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input [(ngModel)]="lastname" label= "Apellido:"></ion-input>
-    </ion-item>
-    <ion-item>
 
-<!-- carreras -->
-      <ion-select label="Seleccionar carrera" [(ngModel)]="carrera">
-        <ion-select-option *ngFor="let level of edLevels | keyvalue" 
-        value="{{level.key}}">{{level.value}}</ion-select-option>
-      </ion-select>
+  <div class = "info-avatar">
+    <ion-avatar slot="start">
+      <ion-img src="assets/images/usuario.png" alt="Foto de usuario" />
+    </ion-avatar>
+  </div>
+
+  <h1>{{username}}</h1>
+    
+    <div  class="grid-container">
       
-    </ion-item>
-<!-- calendario -->
-    <ion-item lines="none">
-      <ion-input label="Fecha de la clase" [(ngModel)]="birthday"></ion-input>
-      <ion-button fill="clear" id="btn_calendar">
-        <ion-icon name="calendar-number-outline"></ion-icon>
+      <ion-button (click)= "noDisponible()">
+        <ion-icon name="book-outline" slot= "start"></ion-icon>Asignaturas
       </ion-button>
-      <ion-popover trigger="btn_calendar" triggerAction="click">
-        <ng-template>
-          <ion-datetime [(ngModel)]="birthday"></ion-datetime>
-        </ng-template>
-      </ion-popover>
-    </ion-item>
 
-    <ion-item lines="none">
-      <ion-button (click)="clean()">Limpiar datos</ion-button>
-      <ion-button id="alert_show">Mostrar datos</ion-button>
-      <ion-button (click)="noDisponible()">Siguente</ion-button>
-      <ion-alert
-        trigger="alert_show"
-        header="Usuario"
-        subHeader="Informacion del usuario"
-        message="Su nombre es {{name}} {{lastname}}"
-        [buttons]="alertButtons"
-      ></ion-alert>
-    </ion-item>
+      <ion-button (click)= "noDisponible()">
+        <ion-icon name="qr-code-outline" slot= "start"></ion-icon>Qr
+      </ion-button>
+    </div>
 
-  </ion-list>
-</ion-content>
+  </ion-content>
 
  <!-- Footer del home -->
 <ion-footer [translucent]="true">
