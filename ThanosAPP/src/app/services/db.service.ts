@@ -8,6 +8,8 @@ import { Login } from '../models/login';
 })
 export class DbService {
 
+  loggedUser!: Login | undefined;
+
   logins: Login[] = [
     {
       username: 'admin',
@@ -29,13 +31,20 @@ export class DbService {
 
   constructor(private router : Router) {   }
 
-  canActivate(){
-    console.log("Ejecutando guardian...")
-    this.router.navigate(['login'])
-    return false;
-  }
-
   findByUsername(u: string): Login | undefined {
     return this.logins.find(l => l.username === u)
+  }
+
+  registerLoggedUser(login: Login){
+    this.loggedUser = login;
+  }
+
+  logout() {
+    this.loggedUser = undefined;
+  }
+
+  isAuthenticated(): boolean {
+    console.log(this.loggedUser)
+    return this.loggedUser !== undefined
   }
 }

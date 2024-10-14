@@ -2,7 +2,7 @@ import { Component,ElementRef, OnInit,ViewChild } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { DbService } from 'src/app/services/db.service';
-import {Login } from 'src/app/models/login';
+
 
 @Component({
   selector: 'app-login',
@@ -45,6 +45,7 @@ export class LoginPage implements OnInit {
       this.password === login.password
     ) {
       this.generateMessage('Login correcto', 'success');
+      this.dbService.registerLoggedUser(login);
       let extras: NavigationExtras = {
         state: { user: this.username }
       }
