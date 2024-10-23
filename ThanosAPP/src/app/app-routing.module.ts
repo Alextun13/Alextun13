@@ -40,9 +40,14 @@ const routes: Routes = [
 
   {
     path: 'e404',
-    canActivate : [AuthGuard],
+    canActivate : [NoAuthGuard],
     loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
   },
+  {
+    path: 'asistencia',
+    loadChildren: () => import('./pages/asistencia/asistencia.module').then( m => m.AsistenciaPageModule)
+  },
+
 
 
 
