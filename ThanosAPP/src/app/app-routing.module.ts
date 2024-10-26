@@ -10,6 +10,18 @@ const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full'
   },
+
+  {
+    path: 'login',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'principal',
+    redirectTo: 'principal',
+    pathMatch: 'full'
+  },
+
   {
     path: 'home',
     canActivate : [AuthGuard],
@@ -25,6 +37,20 @@ const routes: Routes = [
     loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule),
     
   },
+
+  {
+    path: 'e404',
+    canActivate : [NoAuthGuard],
+    loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
+  },
+  {
+    path: 'asistencia',
+    loadChildren: () => import('./pages/asistencia/asistencia.module').then( m => m.AsistenciaPageModule)
+  },
+
+
+
+
 ];
 
 @NgModule({

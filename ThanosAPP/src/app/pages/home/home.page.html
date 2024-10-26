@@ -1,39 +1,38 @@
-
 <!-- Header del home -->
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Thanos-APP
+<ion-header class="hola" [translucent]="true">
+  <ion-toolbar class="navabr">
+    <ion-title >
+      <span>Thanos-APP</span> <!-- Estilo del título -->
     </ion-title>
-  </ion-toolbar>
+  </ion-toolbar>  
 </ion-header>
 
-<ion-content color="light">
+<ion-content>
 
-  <div class = "info-avatar">
+  <div class="info-avatar">
     <ion-avatar slot="start">
       <ion-img src="assets/images/usuario.png" alt="Foto de usuario" />
     </ion-avatar>
   </div>
 
-  <h1>{{username}}</h1>
+  <h1 class="welcome-title">{{username}}</h1> <!-- Estilo del título de bienvenida -->
     
-    <div  class="grid-container">
-      
-      <ion-button (click)= "noDisponible()">
-        <ion-icon name="book-outline" slot= "start"></ion-icon>Asignaturas
-      </ion-button>
+  <div class="grid-container">
+    <ion-button (click)="irAsistencias()">
+      <ion-icon name="book-outline" slot="start"></ion-icon>Asignaturas
+    </ion-button>
 
-      <ion-button (click)= "noDisponible()">
-        <ion-icon name="qr-code-outline" slot= "start"></ion-icon>Qr
-      </ion-button>
-    </div>
+    <ion-button (click)="noDisponible()">
+      <ion-icon name="qr-code-outline" slot="start"></ion-icon>Qr
+    </ion-button>
+  </div>
 
-  </ion-content>
+</ion-content>
 
- <!-- Footer del home -->
-<ion-footer [translucent]="true">
-  <ion-toolbar >
-    <h6>APP Dessarollada por equipo Thanos SPA</h6>
+<!-- Footer del home -->
+<ion-footer class="hola" [translucent]="true">
+  <ion-toolbar class="hola">
+    <h6 class="hola">APP Desarrollada por equipo Thanos SPA</h6> <!-- Estilo del footer -->
   </ion-toolbar>
 </ion-footer>
+

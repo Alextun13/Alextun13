@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+ion-content {
+  --background: #f0efeb; /* Color de fondo */
+  font-family: 'Poppins', sans-serif;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+
+  ion-list {
+    padding: 20px;
+
+    ion-item {
+      --background: #f1c40f; /* Fondo de los ítems */
+      --border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 15px;
+
+      ion-label {
+        h2 {
+          color: black; /* Color del título */
+          font-weight: bold;
+        }
+
+        h3 {
+          color: black; /* Color de subtítulos */
+          margin: 5px 0; /* Margen entre los subtítulos */
+        }
+      }
+    }
+  }
+
+  // Estilo del footer
+  ion-footer {
+    --background: #dab88c; /* Color del fondo del footer */
+    color: black;
+
+    ion-toolbar {
+      text-align: center;
+
+      h6 {
+        text-align: center;
+        margin: 0;
+        padding: 10px 0;
+        font-size: 1rem;
+        color: black; /* Color del texto del footer */
+      }
+    }
+  }
+
+  // Estilo del botón
+  ion-button {
+    --background: #d9bb94; /* Color de fondo del botón */
+    --color: black;
+    --border-radius: 8px;
+    font-size: 1rem;
+    padding: 15px;
+    margin-top: 20px;
+  }
+
+  // Color del botón cuando se presiona
+  ion-button:hover {
+    --background: #f1a747; /* Color oscuro del botón */
+  }
+}
+
+.hola {
+    --background: #e7c89f; 
+    color: black;
+  }
+
+.aaaa{
+    text-align: center;
+    --background: #e7c89f;
+}
+
+.boton1{
+    position: left;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    --background: #e7c89f; 
+    color: black;
+}
+

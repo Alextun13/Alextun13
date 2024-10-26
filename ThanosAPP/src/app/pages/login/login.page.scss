@@ -1,6 +1,9 @@
 
 ion-content {
-    background-color: #f4f4f4; 
+  --background: #f0efeb;
+  font-family: 'Poppins', sans-serif;  
+
+
     .ion-padding {
       padding: 20px; 
     }
@@ -34,7 +37,7 @@ ion-content {
     }
   
     ion-button {
-      --background: #2980b9; 
+      --background: #e7c89f; 
       --color: #fff; 
       --border-radius: 8px; 
       font-size: 1.2rem; 
@@ -57,4 +60,12 @@ ion-content {
       }
     }
   }
+
+  .tit {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: black;
+  }
+
   
