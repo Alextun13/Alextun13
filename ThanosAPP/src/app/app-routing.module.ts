@@ -21,6 +21,11 @@ const routes: Routes = [
     redirectTo: 'principal',
     pathMatch: 'full'
   },
+  {
+    path: 'lector-qr',
+    redirectTo: 'lector-qr',
+    pathMatch: 'full'
+  },
 
   {
     path: 'home',
@@ -47,6 +52,11 @@ const routes: Routes = [
     path: 'asistencia',
     loadChildren: () => import('./pages/asistencia/asistencia.module').then( m => m.AsistenciaPageModule)
   },
+  {
+    path: 'lector-qr',
+    loadChildren: () => import('./pages/lector-qr/lector-qr.module').then( m => m.LectorQrPageModule)
+  },
+
 
 
 
