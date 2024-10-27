@@ -3,12 +3,7 @@
     <ion-title>Registro de Asistencias</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-  <ion-button expand="block" (click)="abrirCamara()">
-    <ion-icon name="camera" slot="start"></ion-icon> Escanear QR
-  </ion-button>
-
   <ion-list>
     <ion-item *ngFor="let clase of lista_asistencia">
       <ion-label>
@@ -23,8 +18,8 @@
   <ion-button expand="block" (click)="volverPaginaPrincipal()">
     <ion-icon name="arrow-back" slot="start"></ion-icon>Volver
   </ion-button>
+  
 </ion-content>
-
 <ion-footer class="aaaa">
   <ion-toolbar class="aaaa">
     <h6 class="aaaa">APP Desarrollada por equipo Thanos</h6>
