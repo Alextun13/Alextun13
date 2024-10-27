@@ -105,7 +105,6 @@ export class LectorQrPage implements OnInit {
 
       //this.storage.setvalue('Datos Qr', datosEscaneados);
       this.navCtrl.navigateForward('/asistencia');
-      //this.router.navigate(['/asistencia']); 
     } else {
       if (this.scanActive) {
         requestAnimationFrame(this.scan.bind(this));
