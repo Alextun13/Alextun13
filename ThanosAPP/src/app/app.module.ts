@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 // Nuevas importaciones
 import { HttpClientModule } from '@angular/common/http';  // Para manejar HTTP requests
 import { AttendanceService } from './services/attendance.service';  // El servicio de asistencia
+import { ApiService } from './services/api.service';  // Asegúrate de que la ruta sea correcta
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,7 +22,8 @@ import { AttendanceService } from './services/attendance.service';  // El servic
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    AttendanceService  // Agregar el servicio aquí
+    AttendanceService,  // Agregar el servicio aquí
+    ApiService          // Asegúrate de agregar ApiService aquí
   ],
   bootstrap: [AppComponent],
 })
