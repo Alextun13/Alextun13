@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>LectorQr</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">LectorQr</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div>
+    <ion-button (click)="IniciarScaner()">
+      abrir cámara
+    </ion-button>
+    <video #video [hidden]="!scanActive" width="100%"></video>
+    <canvas #canvas hidden></canvas>
+    <ion-button expand="full" (click)="stopScan()" color="danger" *ngIf="scanActive">
+      <ion-icon slot="start" name="close"></ion-icon>
+      Detener escaneo
+  </ion-button>
+  <ion-card *ngIf="qrResult">
+    <ion-card-header>
+        <ion-card-title>Se a escaneado correctamente</ion-card-title>
+    </ion-card-header>
+</ion-card>
+  </div>
+</ion-content>
