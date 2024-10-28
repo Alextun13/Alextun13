@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { LoadingController, ToastController, NavController } from '@ionic/angular';
-import  jsQR from 'jsQR';
+import { Camera, CameraResultType } from '@capacitor/camera';
+import  jsQR from 'jsqr';
 import { Router } from '@angular/router';
 
 
