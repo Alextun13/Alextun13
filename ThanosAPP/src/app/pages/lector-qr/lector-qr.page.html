@@ -1,0 +1,43 @@
+<ion-header class="hola" [translucent]="true">
+  <ion-toolbar class="navabr">
+    <ion-title>LectorQr</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">LectorQr</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+
+
+  <div>
+    <ion-button (click)="IniciarScaner()">
+      abrir cámara
+    </ion-button>
+    <video #video [hidden]="!scanActive" width="100%"></video>
+    <canvas #canvas hidden></canvas>
+    <ion-button expand="full" (click)="stopScan()" color="danger" *ngIf="scanActive">
+      <ion-icon slot="start" name="close"></ion-icon>
+      Detener escaneo
+  </ion-button>
+  <ion-card *ngIf="qrResult">
+    <ion-card-header>
+        <ion-card-title>Se a escaneado correctamente</ion-card-title>
+    </ion-card-header>
+</ion-card>
+  </div>
+  <h1>"Con nuestro lector de códigos QR, podrás escanear fácilmente los códigos proporcionados por la aplicación de Duoc.
+    Simplemente abre la cámara, apunta hacia el código y obtén la información al instante.
+    Esta herramienta está diseñada para hacer tu experiencia más ágil y eficiente dentro del entorno académico de Duoc."</h1>
+</ion-content>
+
+
+<ion-footer class="aaaa">
+  <ion-toolbar class="aaaa">
+    <h6 class="aaaa">APP Desarrollada por equipo Thanos</h6>
+  </ion-toolbar>
+</ion-footer>

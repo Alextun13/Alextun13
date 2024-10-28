@@ -11,20 +11,20 @@ ion-content {
     padding: 20px;
 
     ion-item {
-      --background: #f1c40f; /* Fondo de los ítems */
+      --background: #f1c40f; 
       --border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       margin-bottom: 15px;
 
       ion-label {
         h2 {
-          color: black; /* Color del título */
+          color: black;
           font-weight: bold;
         }
 
         h3 {
-          color: black; /* Color de subtítulos */
-          margin: 5px 0; /* Margen entre los subtítulos */
+          color: black; 
+          margin: 5px 0; 
         }
       }
     }
@@ -50,7 +50,7 @@ ion-content {
 
   // Estilo del botón
   ion-button {
-    --background: #d9bb94; /* Color de fondo del botón */
+    --background: #d9bb94;
     --color: black;
     --border-radius: 8px;
     font-size: 1rem;
@@ -60,7 +60,7 @@ ion-content {
 
   // Color del botón cuando se presiona
   ion-button:hover {
-    --background: #f1a747; /* Color oscuro del botón */
+    --background: #f1a747; 
   }
 }
 
