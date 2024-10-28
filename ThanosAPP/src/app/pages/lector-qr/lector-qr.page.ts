@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { Camera, CameraResultType } from '@capacitor/camera';
 import { LoadingController, ToastController, NavController } from '@ionic/angular';
-import  jsQR from 'jsqr';
+import  jsQR from 'jsQR';
 import { Router } from '@angular/router';
 
 
@@ -13,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./lector-qr.page.scss'],
 })
 export class LectorQrPage implements OnInit {
-
+  
   @ViewChild('video',{static:false})video!:ElementRef<HTMLVideoElement>;
   @ViewChild('canvas',{static:false})canvas!:ElementRef<HTMLVideoElement>;
   videoElement:any;

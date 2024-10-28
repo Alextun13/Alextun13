@@ -66,7 +66,6 @@ export class HomePage implements OnInit {
   logout(){
     this.dbService.logout();
     this.router.navigate(['/login']);
-
   }
   
   irAsistencias(){
@@ -77,8 +76,9 @@ export class HomePage implements OnInit {
     this.router.navigate(['/home']); 
   }
 
-  
   irAQr() {
     this.router.navigate(['/lector-qr'])
   }
 }
+
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
