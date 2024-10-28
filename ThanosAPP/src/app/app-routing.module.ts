@@ -26,6 +26,7 @@ const routes: Routes = [
     redirectTo: 'lector-qr',
     pathMatch: 'full'
   },
+ 
 
   {
     path: 'home',
@@ -55,6 +56,14 @@ const routes: Routes = [
   {
     path: 'lector-qr',
     loadChildren: () => import('./pages/lector-qr/lector-qr.module').then( m => m.LectorQrPageModule)
+  },
+
+
+  // Este path siempre debe ir al final
+  {
+    path: '**',
+    redirectTo: 'e404',
+    pathMatch: 'full'
   },
 
 
