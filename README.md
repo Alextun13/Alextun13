@@ -13,6 +13,8 @@ Instalación
   - Node.js (versión recomendada: v14 o superior)
   - Ionic CLI (puedes instalarlo con npm install -g @ionic/cli)
   - Angular CLI (puedes instalarlo con npm install -g @angular/cli)
+  - npm install jsqr
+  - npm install @capacitor/camera
 
 Usuarios disponibles
 
