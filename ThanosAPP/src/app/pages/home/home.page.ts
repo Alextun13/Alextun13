@@ -76,5 +76,9 @@ export class HomePage implements OnInit {
   volverPaginaPrincipal() {
     this.router.navigate(['/home']); 
   }
-}
+
   
+  irAQr() {
+    this.router.navigate(['/lector-qr'])
+  }
+}

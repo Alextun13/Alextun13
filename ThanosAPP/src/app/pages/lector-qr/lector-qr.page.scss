@@ -10,7 +10,7 @@ ion-content {
     justify-content: center;
     align-items: center;
     text-align: center;
-    --background: #f0f0f0; 
+    --background: #f0efeb; 
   
     div {
       width: 100%;
@@ -56,3 +56,10 @@ ion-content {
 
   }
   
+  .fufu{
+      --background: #FFA500; 
+      --color: white;
+      --border-radius: 12px;
+      margin-bottom: 15px;
+      width: 100%;
+  }
