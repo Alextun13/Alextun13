@@ -1,11 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
+import { DbService } from 'src/app/services/db.service';
+
+
+
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class HomePage implements OnInit {
 
@@ -20,7 +25,9 @@ export class HomePage implements OnInit {
 
   constructor(
     private toastController : ToastController,
-    private router: Router
+    private router: Router,
+    private dbService : DbService, 
+    
   ) {
     const state = this.router.getCurrentNavigation()?.extras.state;
     if(state){
@@ -28,6 +35,7 @@ export class HomePage implements OnInit {
       this.username = state['user']
     }
     
+
     this.edLevels.set('0', 'Ingeniería en informática');
     this.edLevels.set('1', 'Mecánica');
     this.edLevels.set('2', 'Analista programador');
@@ -54,6 +62,23 @@ export class HomePage implements OnInit {
     });
     await toast.present();
   }
+
+  logout(){
+    this.dbService.logout();
+    this.router.navigate(['/login']);
+  }
   
+  irAsistencias(){
+    this.router.navigate(['/asistencia'])
+  }
+  
+  volverPaginaPrincipal() {
+    this.router.navigate(['/home']); 
+  }
+
+  irAQr() {
+    this.router.navigate(['/lector-qr'])
+  }
 }
-  
+
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

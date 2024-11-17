@@ -1,63 +1,41 @@
-
 <!-- Header del home -->
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Thanos-APP
+<ion-header class="hola" [translucent]="true">
+  <ion-toolbar class="navabr">
+    <ion-title >
+      <span>Thanos-APP</span> <!-- Estilo del título -->
     </ion-title>
-  </ion-toolbar>
+  </ion-toolbar>  
 </ion-header>
 
-<ion-content color="light">
-  <h1>Bienvenido: {{username}}</h1>
-  <ion-list [inset]="true">
-    <ion-item>
-      <ion-input  [(ngModel)]="name" label="Nombre:"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input [(ngModel)]="lastname" label= "Apellido:"></ion-input>
-    </ion-item>
-    <ion-item>
+<ion-content>
 
-<!-- carreras -->
-      <ion-select label="Seleccionar carrera" [(ngModel)]="carrera">
-        <ion-select-option *ngFor="let level of edLevels | keyvalue" 
-        value="{{level.key}}">{{level.value}}</ion-select-option>
-      </ion-select>
-      
-    </ion-item>
-<!-- calendario -->
-    <ion-item lines="none">
-      <ion-input label="Fecha de la clase" [(ngModel)]="birthday"></ion-input>
-      <ion-button fill="clear" id="btn_calendar">
-        <ion-icon name="calendar-number-outline"></ion-icon>
-      </ion-button>
-      <ion-popover trigger="btn_calendar" triggerAction="click">
-        <ng-template>
-          <ion-datetime [(ngModel)]="birthday"></ion-datetime>
-        </ng-template>
-      </ion-popover>
-    </ion-item>
+  <div class="info-avatar">
+    <ion-avatar slot="start">
+      <ion-img src="assets/images/foto.png" alt="Foto de usuario" />
+    </ion-avatar>
+  </div>
 
-    <ion-item lines="none">
-      <ion-button (click)="clean()">Limpiar datos</ion-button>
-      <ion-button id="alert_show">Mostrar datos</ion-button>
-      <ion-button (click)="noDisponible()">Siguente</ion-button>
-      <ion-alert
-        trigger="alert_show"
-        header="Usuario"
-        subHeader="Informacion del usuario"
-        message="Su nombre es {{name}} {{lastname}}"
-        [buttons]="alertButtons"
-      ></ion-alert>
-    </ion-item>
+  <h1 class="welcome-title">{{username}}</h1> <!-- Estilo del título de bienvenida -->
+  <h2>"ThanosApp es una aplicación desarrollada por estudiantes de informática para gestionar la asistencia de manera eficiente.
+    Esta herramienta permite a los usuarios registrar y controlar las asistencias en clases o eventos, facilitando el seguimiento y ofreciendo una experiencia simple e intuitiva.
+    Ideal para estudiantes y profesores, ThanosApp moderniza el proceso de control de asistencia."</h2>
+    
+  <div class="grid-container">
+    <ion-button (click)="irAsistencias()">
+      <ion-icon name="book-outline" slot="start"></ion-icon>Asignaturas
+    </ion-button>
 
-  </ion-list>
+    <ion-button (click)="irAQr()">
+      <ion-icon name="qr-code-outline" slot="start"></ion-icon>Qr
+    </ion-button>
+  </div>
+
 </ion-content>
 
- <!-- Footer del home -->
-<ion-footer [translucent]="true">
-  <ion-toolbar >
-    <h6>APP Dessarollada por equipo Thanos SPA</h6>
+<!-- Footer del home -->
+<ion-footer class="hola" [translucent]="true">
+  <ion-toolbar class="hola">
+    <h6 class="hola">APP Desarrollada por equipo Thanos SPA</h6> <!-- Estilo del footer -->
   </ion-toolbar>
 </ion-footer>
+

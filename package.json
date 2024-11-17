@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@capacitor/camera": "^6.1.0",
+    "jsqr": "^1.4.0"
+  }
+}
