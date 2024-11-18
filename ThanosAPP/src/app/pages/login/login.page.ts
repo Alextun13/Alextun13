@@ -30,6 +30,7 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
+
   validarCredenciales() {
     console.log("Ejecutando validacion ...")
     
@@ -64,6 +65,10 @@ export class LoginPage implements OnInit {
     await toast.present();
   }
 
+  async navegarARegistro(){
+    await this.router.navigate(['/registro']);
+  }
+
   async noDisponible(){
     const toast = await this.toastController.create({
       message: "Opcion no implementada por el momento",
@@ -73,6 +78,8 @@ export class LoginPage implements OnInit {
     });
     await toast.present();
   }
+
+  
 
 }
 
