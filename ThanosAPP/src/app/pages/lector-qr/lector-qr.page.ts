@@ -3,6 +3,7 @@ import { LoadingController, ToastController, NavController } from '@ionic/angula
 import { Camera, CameraResultType } from '@capacitor/camera';
 import  jsQR from 'jsqr';
 import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
 
 
 
@@ -27,7 +28,7 @@ export class LectorQrPage implements OnInit {
   qrResult:string='';
 
 
-  constructor(public toastCtrl:ToastController,    private router: Router, private navCtrl: NavController, private loadingCtrl:LoadingController) { 
+  constructor(public toastCtrl:ToastController,  private storage: Storage  ,private router: Router, private navCtrl: NavController, private loadingCtrl:LoadingController) { 
     this.qrResult='';
   }
 
@@ -58,9 +59,11 @@ export class LectorQrPage implements OnInit {
 
       requestAnimationFrame(this.scan.bind(this));
     }
+
+    // Inicializar el almacenamiento (localStorage)
+    await this.storage.create();
   };
   
-//aquí vay culiao
 
   async scan() {
     if (this.videoElement.readyState === this.videoElement.HAVE_ENOUGH_DATA) {
@@ -110,7 +113,32 @@ export class LectorQrPage implements OnInit {
         requestAnimationFrame(this.scan.bind(this));
       }
     }
+
+    // Captura la fecha y hora actual
+    const fechaHora = new Date().toString();
+
+    // Nuevo registro de asistencia
+    const nuevaAsistencia = {
+      datosQR: this.qrResult,
+      fechaHora: fechaHora
+    };
+
+    // Obtener las asistencias previas desde localStorage
+    const asistenciasGuardadas = localStorage.getItem('asistencias');
+    let listaAsistencias = asistenciasGuardadas ? JSON.parse(asistenciasGuardadas) : [];
+
+    // Agregar la nueva asistencia
+    listaAsistencias.push(nuevaAsistencia);
+
+    // Guardar la lista actualizada en localStorage
+    localStorage.setItem('asistencias', JSON.stringify(listaAsistencias));
+
+    // Notificar al usuario
+    this.showQrToast(`Asistencia registrada: ${fechaHora}`);
+
+
   }
+// Mensaje del Toast
 
   async showQrToast(message: string) {
     const toast = await this.toastCtrl.create({
@@ -134,4 +162,6 @@ export class LectorQrPage implements OnInit {
     this.scanActive=false;
   }
 
+
+  
 }

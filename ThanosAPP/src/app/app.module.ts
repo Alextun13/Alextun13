@@ -12,13 +12,17 @@ import { HttpClientModule } from '@angular/common/http';  // Para manejar HTTP r
 import { AttendanceService } from './services/attendance.service';  // El servicio de asistencia
 import { ApiService } from './services/api.service';  // Asegúrate de que la ruta sea correcta
 
+// LocalStorage
+import { IonicStorageModule } from '@ionic/storage-angular';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule  // Asegúrate de incluir HttpClientModule
+    HttpClientModule,  // Asegúrate de incluir HttpClientModule
+    IonicStorageModule.forRoot(), // Aqui se esta iniciando el LocalStorage
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

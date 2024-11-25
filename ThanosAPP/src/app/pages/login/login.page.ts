@@ -79,7 +79,5 @@ export class LoginPage implements OnInit {
     await toast.present();
   }
 
-  
-
 }
 
