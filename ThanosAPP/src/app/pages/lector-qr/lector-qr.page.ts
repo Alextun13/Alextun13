@@ -121,6 +121,7 @@ export class LectorQrPage implements OnInit {
     const nuevaAsistencia = {
       datosQR: this.qrResult,
       fechaHora: fechaHora
+
     };
 
     // Obtener las asistencias previas desde localStorage
@@ -133,6 +134,7 @@ export class LectorQrPage implements OnInit {
     // Guardar la lista actualizada en localStorage
     localStorage.setItem('asistencias', JSON.stringify(listaAsistencias));
 
+    
     // Notificar al usuario
     this.showQrToast(`Asistencia registrada: ${fechaHora}`);
 
