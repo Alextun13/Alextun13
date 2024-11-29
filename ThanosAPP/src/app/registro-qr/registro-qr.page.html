@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro de QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let asistencia of asistencias; let i = index">
+      <ion-label>
+        <h2>Registro #{{ i + 1 }}</h2>
+        <p><strong>Datos QR:</strong> {{ asistencia.datosQR }}</p>
+        <p><strong>Fecha:</strong> {{ asistencia.fechaHora }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" color="danger" (click)="limpiarAsistencias()">
+    Limpiar Registros
+  </ion-button>
+
+
+  <ion-button expand="block" (click)="volverPaginaPrincipal()">
+    <ion-icon name="arrow-back" slot="start"></ion-icon>Volver
+  </ion-button>
+  
+</ion-content>

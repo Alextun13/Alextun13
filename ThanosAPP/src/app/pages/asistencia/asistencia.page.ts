@@ -25,4 +25,10 @@ export class AsistenciaPage implements OnInit {
   volverPaginaPrincipal() {
     this.router.navigate(['/home']); 
   }
+
+
+
+  RegistroQR() {
+    this.router.navigate(['/registro-qr']); 
+  }
 }

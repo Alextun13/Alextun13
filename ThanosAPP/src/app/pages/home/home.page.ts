@@ -79,6 +79,7 @@ export class HomePage implements OnInit {
   irAQr() {
     this.router.navigate(['/lector-qr'])
   }
+
 }
 
 //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

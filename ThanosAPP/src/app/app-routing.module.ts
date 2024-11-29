@@ -26,6 +26,11 @@ const routes: Routes = [
     redirectTo: 'lector-qr',
     pathMatch: 'full'
   },
+  {
+    path: 'registro-qr',
+    canActivate : [AuthGuard],
+    loadChildren: () => import('./registro-qr/registro-qr.module').then( m => m.RegistroQrPageModule)
+  },
  
 
   {
@@ -58,6 +63,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/lector-qr/lector-qr.module').then( m => m.LectorQrPageModule)
   },
 
+  
+
 
   // Este path siempre debe ir al final
   {
@@ -65,6 +72,8 @@ const routes: Routes = [
     redirectTo: 'e404',
     pathMatch: 'full'
   },
+
+
 
 
 ];
