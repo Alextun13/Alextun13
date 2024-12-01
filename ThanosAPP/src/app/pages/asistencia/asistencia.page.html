@@ -3,27 +3,25 @@
     <ion-title>Registro de Asistencias</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
-  <ion-list>
-    <ion-item *ngFor="let clase of lista_asistencia">
-      <ion-label>
-        <h2>{{ clase.nom_asig }}</h2>
-        <h3>Total de clases: {{ clase.t_clases }}</h3>
-        <h3>Clases asistidas: {{ clase.c_presente }}</h3>
-        <h3>Porcentaje de asistencia: {{ clase.porcentaje }}%</h3>
-      </ion-label>
-    </ion-item>
-  </ion-list>
-  
-  <ion-button expand="block" (click)="volverPaginaPrincipal()">
-    <ion-icon name="arrow-back" slot="start"></ion-icon>Volver
+
+
+
+  <ion-card (click)="RegistroQR()">
+    <ion-card-header>
+      <ion-card-title>PROGRAMACION DE APLICACIONES MOVILES_002D</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Aquí puedes ver el registro de asistencias de las clases de tu curso.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-content>
+    <ion-button expand="block" (click)="volverPaginaPrincipal()">
+      <ion-icon name="arrow-back" slot="start"></ion-icon>Volver
   </ion-button>
 
-  <ion-button expand="block" (click)="RegistroQR()">
-    <ion-icon name="arrow-back" slot="start"></ion-icon>Registro-QR
-  </ion-button>
-  
 </ion-content>
+
 <ion-footer class="aaaa">
   <ion-toolbar class="aaaa">
     <h6 class="aaaa">APP Desarrollada por equipo Thanos</h6>
