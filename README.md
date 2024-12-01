@@ -15,6 +15,7 @@ Instalación
   - Angular CLI (puedes instalarlo con npm install -g @angular/cli)
   - npm install jsqr
   - npm install @capacitor/camera
+  - npm install @ionic/storage-angular
 
 Usuarios disponibles
 
