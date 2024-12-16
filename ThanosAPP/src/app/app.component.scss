@@ -1,6 +1,7 @@
-
+*{color:#34495e;
+}
 ion-content {
-    background-color: #f4f4f4; 
+    background-color: white; 
     .ion-padding {
       padding: 20px; 
     }
@@ -21,7 +22,7 @@ ion-content {
     }
     
     ion-item {
-      --background: #fff; 
+      --background:#e7c89f; 
       --border-radius: 10px; 
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
       margin-bottom: 15px; 
@@ -57,4 +58,8 @@ ion-content {
       }
     }
   }
+
+.barra_menu{
+  color:#34495e;
+}
   

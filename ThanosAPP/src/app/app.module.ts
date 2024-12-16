@@ -15,6 +15,12 @@ import { ApiService } from './services/api.service';  // Asegúrate de que la ru
 // LocalStorage
 import { IonicStorageModule } from '@ionic/storage-angular';
 
+
+import { Component } from '@angular/core';
+import { Router } from '@angular/router'; // Importar el enrutador
+import { DbService } from './services/db.service'; // Importar el servicio que maneja la sesión
+
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -31,4 +37,15 @@ import { IonicStorageModule } from '@ionic/storage-angular';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+
+export class AppModule {  constructor(
+  private dbService: DbService, // Inyectar el servicio de base de datos
+  private router: Router        // Inyectar el servicio de enrutamiento
+) {}
+
+cerrarSesion() {
+  this.router.navigate(['/login']); // Redirigir al usuario al inicio de sesión
+}
+}
+
+
