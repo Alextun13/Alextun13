@@ -77,8 +77,12 @@ export class HomePage implements OnInit {
   }
 
   irAQr() {
-    this.router.navigate(['/lector-qr'])
+    this.router.navigate(['/lector-qr']);
   }
+    exit() {
+      this.dbService.logout();
+      this.router.navigate(['/login']);
+    }
 
 }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular'; // Importa el AlertController
+import { AlertController } from '@ionic/angular';  // Importa el AlertController
 
 @Component({
   selector: 'app-registro-qr',
@@ -12,7 +12,7 @@ export class RegistroQrPage implements OnInit {
 
   constructor(
     private router: Router,
-    private alertController: AlertController // Inyecta el AlertController
+    private alertController: AlertController  // Inyecta el AlertController
   ) {}
 
   ngOnInit() {
@@ -22,8 +22,13 @@ export class RegistroQrPage implements OnInit {
   cargarAsistencias() {
     const asistenciasGuardadas = localStorage.getItem('asistencias');
     if (asistenciasGuardadas) {
+      // Filtrar asistencias para incluir solo aquellas con datos válidos y el código QR correcto
       this.asistencias = JSON.parse(asistenciasGuardadas).filter(
-        (asistencia: any) => asistencia.datosQR && asistencia.datosQR.trim().length > 0
+        (asistencia: any) => {
+          const qrValido = asistencia.datosQR && asistencia.datosQR.trim().length > 0;
+          // Verifica si el QR es válido
+          return qrValido && asistencia.datosQR === 'INI24-P24-002D';
+        }
       );
     } else {
       this.asistencias = [];
@@ -39,55 +44,24 @@ export class RegistroQrPage implements OnInit {
     this.router.navigate(['/home']);
   }
 
-  async mostrarAlerta(mensaje: string) {
+  // Método para mostrar un mensaje de alerta si el QR no es válido
+  async mostrarAlerta() {
     const alert = await this.alertController.create({
-      header: 'Alerta',
-      message: mensaje,
+      header: 'QR No Válido',
+      message: 'El código QR escaneado no es válido. Por favor, intente con un código correcto.',
       buttons: ['OK']
     });
     await alert.present();
   }
 
+  // Método para manejar la validación del código QR
   validarQR(datosQR: string) {
-    const hoy = new Date().toISOString().split('T')[0]; // Obtener la fecha actual en formato 'YYYY-MM-DD'
-
-    // Comprobar si el QR coincide con el esperado
     if (datosQR === 'INI24-P24-002D') {
-      // Verificar si ya existe un registro de asistencia para hoy
-      const registroExistente = this.asistencias.some(
-        (asistencia) => asistencia.fecha === hoy
-      );
-
-      if (registroExistente) {
-        // Mostrar alerta si ya hay un registro para hoy
-        this.mostrarAlerta('Ya has registrado asistencia para hoy. Intenta nuevamente mañana.');
-      } else {
-        // Registrar la asistencia si no existe un registro para hoy
-        this.registrarAsistencia(hoy);
-      }
+      // Si el QR es válido, registrar la asistencia
+      this.cargarAsistencias();
     } else {
-      // Mostrar alerta si el código QR no es válido
-      this.mostrarAlerta('El código QR escaneado no es válido. Por favor, intenta con un código correcto.');
-    }
-  }
-
-  registrarAsistencia(fecha: string) {
-    // Verificar si ya existe un registro para hoy antes de intentar guardar
-    const registroExistente = this.asistencias.some(
-      (asistencia) => asistencia.fecha === fecha
-    );
-
-    if (registroExistente) {
-      // Si ya existe un registro para hoy, mostrar una alerta
-      this.mostrarAlerta('Ya has registrado asistencia para hoy. Intenta nuevamente mañana.');
-    } else {
-      // Crear nueva asistencia solo si no existe un registro para hoy
-      const nuevaAsistencia = { datosQR: 'INI24-P24-002D', fecha: fecha };
-      this.asistencias.push(nuevaAsistencia);
-      localStorage.setItem('asistencias', JSON.stringify(this.asistencias));
-
-      this.mostrarAlerta('Asistencia registrada con éxito.');
+      // Si el QR no es válido, mostrar una alerta
+      this.mostrarAlerta();
     }
   }
 }
- 
